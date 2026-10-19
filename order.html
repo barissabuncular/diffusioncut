@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Order an ad · Diffusion Cut</title>
+<meta name="description" content="Order an AI video ad from Diffusion Cut. Pick a package, send the brief, get the concept and payment link within a day.">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" href="brand/favicon_64.png">
+<link rel="apple-touch-icon" href="brand/mark_512.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=7">
+</head>
+<body class="order-page">
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="index.html"><img class="mark" src="brand/mark_transparent.svg" alt="" width="24" height="24">DIFFUSION CUT</a>
+    <ul>
+      <li><a href="index.html#work">Work</a></li>
+      <li><a href="index.html#prices">Prices</a></li>
+      <li class="hide-m"><a href="index.html#faq">FAQ</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="order">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Order</div>
+      <h2>Pick a package, tell us what you sell.</h2>
+      <p>We reply within one working day with the concept and a payment link. Half on order, half on delivery, by card or bank transfer. No account needed.</p>
+    </div>
+
+    <form id="order" class="order-form" novalidate>
+      <input type="hidden" name="access_key" value="WEB3FORMS_KEY">
+      <input type="hidden" name="subject" value="New order from diffusioncut.com">
+      <input type="hidden" name="from_name" value="Diffusion Cut order form">
+      <input type="hidden" name="lang" value="en">
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
+
+      <fieldset class="plan-pick">
+        <legend>Package</legend>
+        <label class="pick"><input type="radio" name="plan" value="Product ad, $300" data-plan="product"><span><b>Product ad</b><em>$300</em><small>10 to 15 s, one product</small></span></label>
+        <label class="pick"><input type="radio" name="plan" value="Brand ad, $600" data-plan="brand" checked><span><b>Brand ad</b><em>$600</em><small>up to 30 s, launch or story</small></span></label>
+        <label class="pick"><input type="radio" name="plan" value="Monthly, $1,800 / month" data-plan="monthly"><span><b>Monthly</b><em>$1,800</em><small>four ads a month</small></span></label>
+      </fieldset>
+
+      <div class="grid2">
+        <label class="field"><span>Brand</span><input type="text" name="brand" required placeholder="Scentini Candles"></label>
+        <label class="field"><span>Website or Instagram</span><input type="text" name="site" required placeholder="scentinicandles.com"></label>
+      </div>
+      <label class="field"><span>The product for this ad</span><input type="text" name="product" required placeholder="Link to the product page, or its name"></label>
+      <label class="field"><span>What should the ad do?</span><textarea name="goal" rows="3" placeholder="Optional. A launch, a bestseller, a seasonal push, a message you want in it."></textarea></label>
+      <div class="grid2">
+        <label class="field"><span>Your name</span><input type="text" name="name" required placeholder="Jane Doe"></label>
+        <label class="field"><span>Email</span><input type="email" name="email" required placeholder="jane@brand.com"></label>
+      </div>
+
+      <div class="order-foot">
+        <button type="submit" class="btn primary">Send the order</button>
+        <span class="fine">No charge yet. You pay after you approve the concept.</span>
+      </div>
+      <div class="form-msg" id="msg" hidden></div>
+    </form>
+
+    <div class="order-done" id="done" hidden>
+      <div class="eyebrow">Received</div>
+      <h2>Got it. Concept and payment link within a day.</h2>
+      <p>Check <b id="done-email"></b> tomorrow. If you want to add photos now, reply to that mail or send them to <a href="mailto:hello@diffusioncut.com">hello@diffusioncut.com</a>.</p>
+      <a class="btn" href="index.html">Back to the site</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="brand" href="index.html"><img class="mark" src="brand/mark_transparent.svg" alt="" width="24" height="24">DIFFUSION CUT</a>
+      <div class="fine">AI video studio. Ads for online brands, films for stories worth telling.</div>
+    </div>
+    <div>
+      <b>Studio</b>
+      <ul>
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="index.html#prices">Prices</a></li>
+        <li><a href="siparis.html">Türkçe</a></li>
+      </ul>
+    </div>
+    <div>
+      <b>Contact</b>
+      <ul>
+        <li><a href="mailto:hello@diffusioncut.com">hello@diffusioncut.com</a></li>
+        <li><a href="https://www.instagram.com/diffusioncut" target="_blank" rel="noopener">Instagram</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script src="order.js?v=1"></script>
+</body>
+</html>
