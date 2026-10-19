@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diffusion Cut · AI video ads for brands</title>
+<meta name="description" content="Diffusion Cut makes AI video ads for online brands. 10 to 30 second ads with your real product, delivered in three working days.">
+<meta property="og:title" content="Diffusion Cut · AI video ads for brands">
+<meta property="og:description" content="10 to 30 second ads with your real product, delivered in three working days.">
+<meta property="og:image" content="https://barissabuncular.github.io/diffusioncut/brand/mark_1024.png">
+<link rel="icon" type="image/png" href="brand/favicon_64.png">
+<link rel="apple-touch-icon" href="brand/mark_512.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0b0b0e;
+    --panel: #141418;
+    --line: #25252c;
+    --text: #efeff3;
+    --muted: #9b9ba6;
+    --accent: #b8ff5c;
+    --accent-ink: #0f1a05;
+    --radius: 14px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 Inter, system-ui, -apple-system, "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  h1, h2, h3 { font-family: "Space Grotesk", Inter, sans-serif; font-weight: 700; line-height: 1.1; margin: 0; letter-spacing: -.01em; }
+  h2 { font-size: clamp(28px, 3.4vw, 38px); }
+  h3 { font-size: 20px; font-weight: 600; }
+  .eyebrow { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+  .muted { color: var(--muted); }
+
+  nav { position: sticky; top: 0; z-index: 10; background: rgba(11,11,14,.85); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+  .brand { display: flex; align-items: center; gap: 10px; color: var(--text); font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 17px; letter-spacing: .02em; }
+  .brand:hover { text-decoration: none; }
+  .mark { width: 22px; height: 22px; display: block; }
+  nav ul { display: flex; gap: 22px; list-style: none; margin: 0; padding: 0; font-size: 14px; }
+  nav ul a { color: var(--muted); }
+  nav ul a:hover { color: var(--text); text-decoration: none; }
+
+  header { padding: 96px 0 64px; border-bottom: 1px solid var(--line); position: relative; overflow: hidden; }
+  header::before { content: ""; position: absolute; inset: -40% -20% auto auto; width: 60vw; height: 60vw; max-width: 720px; max-height: 720px;
+    background: radial-gradient(closest-side, rgba(184,255,92,.14), transparent 70%); pointer-events: none; }
+  header h1 { font-size: clamp(40px, 7vw, 84px); margin: 14px 0 18px; max-width: 900px; }
+  header h1 em { font-style: normal; color: var(--accent); }
+  .lede { max-width: 640px; color: var(--muted); margin: 0 0 30px; font-size: clamp(17px, 2vw, 20px); }
+  .links { display: flex; flex-wrap: wrap; gap: 10px; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border: 1px solid var(--line); border-radius: 999px; color: var(--text); font-weight: 500; font-size: 15px; background: var(--panel); }
+  .btn:hover { border-color: var(--accent); text-decoration: none; }
+  .btn.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); font-weight: 600; }
+  .facts { display: flex; flex-wrap: wrap; gap: 24px 36px; margin-top: 44px; font-size: 14px; color: var(--muted); }
+  .facts b { display: block; color: var(--text); font-family: "Space Grotesk", sans-serif; font-size: 22px; font-weight: 700; }
+
+  section { padding: 72px 0 8px; }
+  .sec-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap; margin-bottom: 28px; }
+  .sec-head p { margin: 8px 0 0; max-width: 620px; }
+
+  .ads { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+  .ad { display: grid; grid-template-columns: minmax(0, 220px) minmax(0, 1fr); gap: 24px; align-items: center; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; }
+  .ad video { width: 100%; aspect-ratio: 9 / 16; border-radius: 10px; background: #000; display: block; }
+  .ad h3 { font-size: 20px; }
+  .meta { font-size: 13px; color: var(--muted); margin: 6px 0 10px; }
+  .ad p { margin: 0; font-size: 15px; color: #cfcfd6; }
+
+  .clips { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+  .clip { margin: 0; }
+  .clip video { width: 100%; aspect-ratio: 16 / 9; border-radius: 10px; background: #000; display: block; }
+  .clip figcaption { font-size: 13px; color: var(--muted); margin-top: 7px; }
+
+  .plans { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+  .plan { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px 22px; display: flex; flex-direction: column; }
+  .plan.featured { border-color: var(--accent); }
+  .plan h3 { font-size: 18px; }
+  .price { font-family: "Space Grotesk", sans-serif; font-size: 40px; font-weight: 700; margin: 10px 0 2px; }
+  .price small { font-size: 15px; color: var(--muted); font-weight: 500; font-family: Inter, sans-serif; }
+  .plan .for { color: var(--muted); font-size: 14px; margin-bottom: 16px; }
+  .plan ul { margin: 0 0 20px; padding-left: 18px; font-size: 14.5px; color: #cfcfd6; flex: 1; }
+  .plan li { margin-bottom: 6px; }
+  .included { margin-top: 18px; font-size: 14.5px; color: #cfcfd6; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 18px; }
+  .included b { color: var(--text); }
+
+  .steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; counter-reset: step; }
+  .step { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; font-size: 14.5px; color: #cfcfd6; }
+  .step::before { counter-increment: step; content: counter(step, decimal-leading-zero); display: block; color: var(--accent); font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 14px; letter-spacing: .1em; margin-bottom: 10px; }
+  .step b { display: block; color: var(--text); margin-bottom: 4px; font-size: 16px; }
+
+  .contact { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 32px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px; align-items: center; }
+  .contact p { margin: 6px 0 0; color: var(--muted); max-width: 560px; }
+
+  footer { margin-top: 72px; padding: 32px 0 44px; border-top: 1px solid var(--line); font-size: 14px; color: var(--muted); }
+  footer .wrap { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; align-items: center; }
+  footer a { color: var(--muted); }
+  footer a:hover { color: var(--text); }
+
+  @media (max-width: 960px) {
+    .plans, .clips { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .ads { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    .wrap { padding: 0 16px; }
+    header { padding: 56px 0 44px; }
+    nav ul { gap: 14px; }
+    nav ul li:nth-child(3) { display: none; }
+    .ad { grid-template-columns: 1fr; }
+    .ad video { max-width: 280px; margin: 0 auto; }
+    .steps { grid-template-columns: 1fr; }
+    .contact { grid-template-columns: 1fr; padding: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top"><img class="mark" src="brand/mark_transparent.svg" alt="" width="22" height="22">DIFFUSION CUT</a>
+    <ul>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#prices">Prices</a></li>
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header id="top">
+  <div class="wrap">
+    <div class="eyebrow">AI video studio</div>
+    <h1>Video ads for your brand, <em>made in days</em>, not weeks.</h1>
+    <p class="lede">Diffusion Cut turns your product photos into finished video ads. Your real product, your colours, your logo. Music and sound included. Delivered in three working days.</p>
+    <div class="links">
+      <a class="btn primary" href="#prices">See prices</a>
+      <a class="btn" href="#work">Watch the work</a>
+    </div>
+    <div class="facts">
+      <div><b>3 days</b>from brief to delivery</div>
+      <div><b>From $300</b>per finished ad</div>
+      <div><b>3 formats</b>vertical, square and wide from one ad</div>
+      <div><b>2 rounds</b>of revisions included</div>
+    </div>
+  </div>
+</header>
+
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">Work</div>
+        <h2>Ads and films, same studio</h2>
+        <p class="muted">Short ads made for clients, and scenes from a story film series made with the same tools. New work is added as it ships.</p>
+      </div>
+    </div>
+
+    <div class="ads">
+      <article class="ad">
+        <video src="media/ad_minicenter_rebrand.mp4" poster="media/ad_minicenter_rebrand.jpg" controls preload="metadata" playsinline></video>
+        <div>
+          <h3>Minicenter rebrand</h3>
+          <div class="meta">Retail · 36 s · brand announcement</div>
+          <p>A mom-and-baby retailer's new name and store, announced across social. Voice, music and sound built in.</p>
+        </div>
+      </article>
+      <article class="ad">
+        <video src="media/ad_fashion_elevator.mp4" poster="media/ad_fashion_elevator.jpg" controls preload="metadata" playsinline></video>
+        <div>
+          <h3>Elevator outfit change</h3>
+          <div class="meta">Fashion · 12 s · product ad</div>
+          <p>One ride, one outfit change, for a clothing brand's social feed. Twelve seconds, product first.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="sec-head" style="margin-top:44px">
+      <div>
+        <h3>Story film scenes</h3>
+        <p class="muted" style="font-size:15px">From a cinematic series in production. Same character across every shot, which is the hard part of AI film, and the method behind our ads.</p>
+      </div>
+    </div>
+    <div class="clips">
+      <figure class="clip"><video src="media/diablo_lazarus_rain.mp4" poster="media/diablo_lazarus_rain.jpg" autoplay muted loop playsinline preload="metadata"></video><figcaption>Night, rain, a priest at the gate</figcaption></figure>
+      <figure class="clip"><video src="media/diablo_lazarus_hall.mp4" poster="media/diablo_lazarus_hall.jpg" autoplay muted loop playsinline preload="metadata"></video><figcaption>The same character, indoors, by candlelight</figcaption></figure>
+      <figure class="clip"><video src="media/diablo_moreina_rain.mp4" poster="media/diablo_moreina_rain.jpg" autoplay muted loop playsinline preload="metadata"></video><figcaption>A second character, same storm</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="prices">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">Prices</div>
+        <h2>Three packages, no quotes</h2>
+        <p class="muted">Pick one, send the brief, get the ad. Half on order, half on delivery.</p>
+      </div>
+    </div>
+    <div class="plans">
+      <div class="plan">
+        <h3>Product ad</h3>
+        <div class="price">$300</div>
+        <div class="for">10 to 15 seconds. One product, one message.</div>
+        <ul>
+          <li>Your product rebuilt from your photos</li>
+          <li>Logo end card, your colours</li>
+          <li>Music and sound effects, licensed</li>
+          <li>Vertical, square and wide cuts</li>
+          <li>Two revision rounds</li>
+        </ul>
+        <a class="btn" href="#contact">Order a product ad</a>
+      </div>
+      <div class="plan featured">
+        <h3>Brand ad</h3>
+        <div class="price">$600</div>
+        <div class="for">Up to 30 seconds. A launch, a story, an announcement.</div>
+        <ul>
+          <li>Everything in the product ad</li>
+          <li>Several products or scenes</li>
+          <li>Voice-over on request</li>
+          <li>On-screen text and captions</li>
+          <li>Two revision rounds</li>
+        </ul>
+        <a class="btn primary" href="#contact">Order a brand ad</a>
+      </div>
+      <div class="plan">
+        <h3>Monthly</h3>
+        <div class="price">$1,800<small> / month</small></div>
+        <div class="for">Four ads a month. New creative every week.</div>
+        <ul>
+          <li>Four product or brand ads</li>
+          <li>One shared brief, four concepts</li>
+          <li>Priority turnaround</li>
+          <li>Hook and text variations</li>
+          <li>Pause or stop any month</li>
+        </ul>
+        <a class="btn" href="#contact">Start monthly</a>
+      </div>
+    </div>
+    <div class="included">
+      <b>Every ad includes:</b> three working days from brief to first delivery, full usage rights for your channels and ads, licensed music and sound, and files ready for Instagram, TikTok, YouTube and Meta ads. Made with AI, openly, which is why it costs this and takes three days.
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">How it works</div>
+        <h2>Brief on Monday, ad by Thursday</h2>
+      </div>
+    </div>
+    <div class="steps">
+      <div class="step"><b>Brief</b>Six questions: product, goal, platform, length, text, deadline. Plus five product photos and your logo. Ten minutes.</div>
+      <div class="step"><b>First cut</b>Within three working days you get the finished ad in all three formats.</div>
+      <div class="step"><b>Revisions</b>Two rounds included. Most ads need one.</div>
+      <div class="step"><b>Delivery</b>Final files, full rights, and a short note on where each cut works best.</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact">
+      <div>
+        <div class="eyebrow">Contact</div>
+        <h2>Send a product photo, get an ad idea back</h2>
+        <p>Email or message us on Instagram. Tell us what you sell and we'll reply with a concept and a price within a day.</p>
+      </div>
+      <div class="links">
+        <a class="btn primary" href="mailto:hello@diffusioncut.com">hello@diffusioncut.com</a>
+        <a class="btn" href="https://www.instagram.com/diffusioncut" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 Diffusion Cut · <a href="https://barissabuncular.github.io" target="_blank" rel="noopener">Run by Barış Sabuncular</a></div>
+    <div><a href="tr.html">Türkçe</a> · <a href="https://www.tiktok.com/@diffusioncut" target="_blank" rel="noopener">TikTok</a> · <a href="https://www.youtube.com/@diffusioncut" target="_blank" rel="noopener">YouTube</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
