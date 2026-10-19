@@ -7,7 +7,7 @@
     "hero_cain_candle", "hero_minicenter_shop", "hero_moreina_bow", "diablo_lazarus_hall", "hero_aidan_steps", "hero_moreina_window",
     "hero_aidan_fists", "hero_cain_dawn"
   ];
-  var FADE = 1.0, LEVEL = 0.55;   // crossfade seconds; the reel's opacity under the text
+  var FADE = 1.0, LEVEL = 0.8;   // crossfade seconds; the reel's opacity under the text
   var reel = document.querySelector(".hero-reel");
   if (!reel || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   var slots = reel.querySelectorAll(".slot"), vids = [], cur = 0, idx = 0, switching = false;
