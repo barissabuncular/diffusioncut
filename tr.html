@@ -4,120 +4,60 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Diffusion Cut · Markalar için yapay zeka video reklamları</title>
-<meta name="description" content="Diffusion Cut, markalar için yapay zeka ile video reklam üretir. Gerçek ürününüzle 10 ile 30 saniyelik reklamlar, üç iş gününde teslim.">
-<meta name="robots" content="index,follow">
+<meta name="description" content="Diffusion Cut, markalar için yapay zeka ile video reklam üretir. Gerçek ürününüz, müzik ve sesli bitmiş reklam, üç iş gününde, 7.500 TL'den.">
 <link rel="icon" type="image/png" href="brand/favicon_64.png">
 <link rel="apple-touch-icon" href="brand/mark_512.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root { --bg: #0b0b0e; --panel: #141418; --line: #25252c; --text: #efeff3; --muted: #9b9ba6; --accent: #b8ff5c; --accent-ink: #0f1a05; --radius: 14px; }
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 Inter, system-ui, -apple-system, "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; }
-  a { color: var(--accent); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
-  h1, h2, h3 { font-family: "Space Grotesk", Inter, sans-serif; font-weight: 700; line-height: 1.1; margin: 0; letter-spacing: -.01em; }
-  h2 { font-size: clamp(28px, 3.4vw, 38px); }
-  h3 { font-size: 20px; font-weight: 600; }
-  .eyebrow { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
-  .muted { color: var(--muted); }
-  nav { position: sticky; top: 0; z-index: 10; background: rgba(11,11,14,.85); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
-  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; }
-  .brand { display: flex; align-items: center; gap: 10px; color: var(--text); font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 17px; letter-spacing: .02em; }
-  .brand:hover { text-decoration: none; }
-  .mark { width: 22px; height: 22px; display: block; }
-  nav ul { display: flex; gap: 22px; list-style: none; margin: 0; padding: 0; font-size: 14px; }
-  nav ul a { color: var(--muted); }
-  nav ul a:hover { color: var(--text); text-decoration: none; }
-  header { padding: 96px 0 64px; border-bottom: 1px solid var(--line); position: relative; overflow: hidden; }
-  header::before { content: ""; position: absolute; inset: -40% -20% auto auto; width: 60vw; height: 60vw; max-width: 720px; max-height: 720px; background: radial-gradient(closest-side, rgba(184,255,92,.14), transparent 70%); pointer-events: none; }
-  header h1 { font-size: clamp(40px, 7vw, 84px); margin: 14px 0 18px; max-width: 900px; }
-  header h1 em { font-style: normal; color: var(--accent); }
-  .lede { max-width: 640px; color: var(--muted); margin: 0 0 30px; font-size: clamp(17px, 2vw, 20px); }
-  .links { display: flex; flex-wrap: wrap; gap: 10px; }
-  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border: 1px solid var(--line); border-radius: 999px; color: var(--text); font-weight: 500; font-size: 15px; background: var(--panel); }
-  .btn:hover { border-color: var(--accent); text-decoration: none; }
-  .btn.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); font-weight: 600; }
-  .facts { display: flex; flex-wrap: wrap; gap: 24px 36px; margin-top: 44px; font-size: 14px; color: var(--muted); }
-  .facts b { display: block; color: var(--text); font-family: "Space Grotesk", sans-serif; font-size: 22px; font-weight: 700; }
-  section { padding: 72px 0 8px; }
-  .sec-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap; margin-bottom: 28px; }
-  .sec-head p { margin: 8px 0 0; max-width: 620px; }
-  .ads { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
-  .ad { display: grid; grid-template-columns: minmax(0, 220px) minmax(0, 1fr); gap: 24px; align-items: center; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; }
-  .ad video { width: 100%; aspect-ratio: 9 / 16; border-radius: 10px; background: #000; display: block; }
-  .ad h3 { font-size: 20px; }
-  .meta { font-size: 13px; color: var(--muted); margin: 6px 0 10px; }
-  .ad p { margin: 0; font-size: 15px; color: #cfcfd6; }
-  .plans { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
-  .plan { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px 22px; display: flex; flex-direction: column; }
-  .plan.featured { border-color: var(--accent); }
-  .plan h3 { font-size: 18px; }
-  .price { font-family: "Space Grotesk", sans-serif; font-size: 40px; font-weight: 700; margin: 10px 0 2px; }
-  .price small { font-size: 15px; color: var(--muted); font-weight: 500; font-family: Inter, sans-serif; }
-  .plan .for { color: var(--muted); font-size: 14px; margin-bottom: 16px; }
-  .plan ul { margin: 0 0 20px; padding-left: 18px; font-size: 14.5px; color: #cfcfd6; flex: 1; }
-  .plan li { margin-bottom: 6px; }
-  .included { margin-top: 18px; font-size: 14.5px; color: #cfcfd6; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 18px; }
-  .included b { color: var(--text); }
-  .steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; counter-reset: step; }
-  .step { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; font-size: 14.5px; color: #cfcfd6; }
-  .step::before { counter-increment: step; content: counter(step, decimal-leading-zero); display: block; color: var(--accent); font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 14px; letter-spacing: .1em; margin-bottom: 10px; }
-  .step b { display: block; color: var(--text); margin-bottom: 4px; font-size: 16px; }
-  .contact { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 32px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px; align-items: center; }
-  .contact p { margin: 6px 0 0; color: var(--muted); max-width: 560px; }
-  footer { margin-top: 72px; padding: 32px 0 44px; border-top: 1px solid var(--line); font-size: 14px; color: var(--muted); }
-  footer .wrap { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; align-items: center; }
-  footer a { color: var(--muted); }
-  footer a:hover { color: var(--text); }
-  @media (max-width: 960px) { .plans { grid-template-columns: 1fr; } .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } .ads { grid-template-columns: 1fr; } }
-  @media (max-width: 640px) { .wrap { padding: 0 16px; } header { padding: 56px 0 44px; } nav ul { gap: 14px; } nav ul li:nth-child(3) { display: none; } .ad { grid-template-columns: 1fr; } .ad video { max-width: 280px; margin: 0 auto; } .steps { grid-template-columns: 1fr; } .contact { grid-template-columns: 1fr; padding: 24px; } }
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <nav>
   <div class="wrap">
-    <a class="brand" href="#top"><img class="mark" src="brand/mark_transparent.svg" alt="" width="22" height="22">DIFFUSION CUT</a>
+    <a class="brand" href="#top"><img class="mark" src="brand/mark_transparent.svg" alt="" width="24" height="24">DIFFUSION CUT</a>
     <ul>
       <li><a href="#work">İşler</a></li>
       <li><a href="#prices">Fiyatlar</a></li>
-      <li><a href="#how">Nasıl çalışır</a></li>
-      <li><a href="#contact">İletişim</a></li>
+      <li class="hide-m"><a href="#how">Nasıl çalışır</a></li>
+      <li class="hide-m"><a href="#faq">SSS</a></li>
+      <li><a class="btn primary" href="#contact">Reklam al</a></li>
     </ul>
   </div>
 </nav>
 
-<header id="top">
+<header class="hero" id="top">
+  <video src="media/diablo_lazarus_rain.mp4" poster="media/diablo_lazarus_rain.jpg" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
   <div class="wrap">
     <div class="eyebrow">Yapay zeka video stüdyosu</div>
-    <h1>Markanız için video reklam, <em>haftalar değil günler</em> içinde.</h1>
-    <p class="lede">Diffusion Cut, ürün fotoğraflarınızı bitmiş video reklamlara dönüştürür. Gerçek ürününüz, renkleriniz, logonuz. Müzik ve ses dahil. Üç iş gününde teslim.</p>
+    <h1>Video reklam, <em>günler içinde.</em></h1>
+    <p class="lede">Ürün fotoğraflarını gönderin, bitmiş reklamı alın. Gerçek ürününüz, logonuz, müzik ve ses dahil. Üç iş günü, 7.500 TL'den.</p>
     <div class="links">
       <a class="btn primary" href="#prices">Fiyatları gör</a>
       <a class="btn" href="#work">İşleri izle</a>
     </div>
-    <div class="facts">
-      <div><b>3 iş günü</b>brief'ten teslime</div>
-      <div><b>7.500 TL'den</b>bitmiş reklam başına</div>
-      <div><b>3 format</b>dikey, kare ve yatay, tek reklamdan</div>
-      <div><b>2 tur</b>revizyon dahil</div>
-    </div>
   </div>
 </header>
+
+<div class="proof">
+  <div class="wrap">
+    <div><b>3 iş günü</b><span>brief'ten bitmiş reklama</span></div>
+    <div><b>7.500 TL</b><span>ürün reklamı, tüm formatlar</span></div>
+    <div><b>3 format</b><span>dikey, kare, yatay, tek fiyat</span></div>
+    <div><b>2 tur</b><span>revizyon, her zaman dahil</span></div>
+  </div>
+</div>
+<div class="wrap made">Araçlar: <b>Kling</b> · <b>Nano Banana Pro</b> · <b>ElevenLabs</b> ve kendi karakter hattımız</div>
 
 <section id="work">
   <div class="wrap">
     <div class="sec-head">
-      <div>
-        <div class="eyebrow">İşler</div>
-        <h2>Müşteriler için yapılmış reklamlar</h2>
-        <p class="muted">Yeni işler teslim edildikçe eklenir.</p>
-      </div>
+      <div class="eyebrow">İşler</div>
+      <h2>Reklamlar ve filmler, tek stüdyo</h2>
+      <p>Müşteriler için kısa reklamlar ve aynı araçlarla yapılan bir hikâye film serisinden sahneler. Yeni işler teslim edildikçe eklenir.</p>
     </div>
+
     <div class="ads">
       <article class="ad">
         <video src="media/ad_minicenter_rebrand.mp4" poster="media/ad_minicenter_rebrand.jpg" controls preload="metadata" playsinline></video>
@@ -136,17 +76,49 @@
         </div>
       </article>
     </div>
+
+    <div class="sub-head">
+      <h3>Hikâye film sahneleri</h3>
+      <p>Yapım aşamasındaki sinematik bir seriden. Her çekimde aynı karakter, yapay zeka filmin en zor kısmı ve reklamlarımızın arkasındaki yöntem.</p>
+    </div>
+    <div class="clips">
+      <figure class="clip"><video src="media/diablo_lazarus_rain.mp4" poster="media/diablo_lazarus_rain.jpg" autoplay muted loop playsinline preload="metadata"></video><figcaption>Gece, yağmur, kapıda bir rahip</figcaption></figure>
+      <figure class="clip"><video src="media/diablo_lazarus_hall.mp4" poster="media/diablo_lazarus_hall.jpg" autoplay muted loop playsinline preload="metadata"></video><figcaption>Aynı karakter, içeride, mum ışığında</figcaption></figure>
+      <figure class="clip"><video src="media/diablo_moreina_rain.mp4" poster="media/diablo_moreina_rain.jpg" autoplay muted loop playsinline preload="metadata"></video><figcaption>İkinci bir karakter, aynı fırtına</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="compare">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Neden yapay zeka</div>
+      <h2>Çekim, çekim yapmadan</h2>
+      <p>Stüdyo günü yok, ekip yok, ürün kargolamak yok. Reklam fotoğraflarınızdan kurulur.</p>
+    </div>
+    <table class="compare">
+      <thead>
+        <tr><th></th><th class="us">Diffusion Cut</th><th>Stüdyo çekimi</th><th>Freelance platformu</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Reklam başına maliyet</td><td class="us">7.500 ile 15.000 TL</td><td>75.000 TL ve üzeri</td><td>Değişken</td></tr>
+        <tr><td>Teslim süresi</td><td class="us">3 iş günü</td><td>3 ile 6 hafta</td><td>1 ile 3 hafta</td></tr>
+        <tr><td>Sizden istenen</td><td class="us">Fotoğraf ve logo</td><td>Ürün, brief, çekim günü</td><td>Kargoyla ürün numunesi</td></tr>
+        <tr><td>Formatlar</td><td class="us">Dikey, kare, yatay dahil</td><td>Ek kurgu ayrıca ücretli</td><td>Genelde tek format</td></tr>
+        <tr><td>Revizyon</td><td class="us">İki tur dahil</td><td>Yeniden çekim bir gün</td><td>Kişiye göre değişir</td></tr>
+        <tr><td>Kullanım hakkı</td><td class="us">Tam, tüm kanallar</td><td>Çoğu zaman kullanım başına</td><td>Çoğu zaman sınırlı</td></tr>
+      </tbody>
+    </table>
+    <div class="note">Stüdyo ve platform rakamları kısa ürün reklamları için tipik aralıklardır, teklif değildir.</div>
   </div>
 </section>
 
 <section id="prices">
   <div class="wrap">
     <div class="sec-head">
-      <div>
-        <div class="eyebrow">Fiyatlar</div>
-        <h2>Üç paket, teklif beklemek yok</h2>
-        <p class="muted">Paketi seçin, brief'i gönderin, reklamı alın. Yarısı siparişte, yarısı teslimde.</p>
-      </div>
+      <div class="eyebrow">Fiyatlar</div>
+      <h2>Üç paket, teklif beklemek yok</h2>
+      <p>Paketi seçin, brief'i gönderin, reklamı alın. Yarısı siparişte, yarısı teslimde.</p>
     </div>
     <div class="plans">
       <div class="plan">
@@ -163,6 +135,7 @@
         <a class="btn" href="#contact">Ürün reklamı sipariş et</a>
       </div>
       <div class="plan featured">
+        <span class="badge">En çok tercih edilen</span>
         <h3>Marka reklamı</h3>
         <div class="price">15.000 TL</div>
         <div class="for">30 saniyeye kadar. Lansman, hikâye, duyuru.</div>
@@ -190,7 +163,7 @@
       </div>
     </div>
     <div class="included">
-      <b>Her reklama dahil:</b> brief'ten ilk teslime üç iş günü, kanallarınız ve reklamlarınız için tam kullanım hakkı, lisanslı müzik ve ses, Instagram, TikTok, YouTube ve Meta reklamlarına hazır dosyalar. Yapay zeka ile, açıkça; bu yüzden bu fiyat ve üç gün.
+      <b>Her reklama dahil:</b> brief'ten ilk teslime üç iş günü, kanallarınız ve reklamlarınız için tam kullanım hakkı, lisanslı müzik ve ses, Instagram, TikTok, YouTube ve Meta reklamlarına hazır dosyalar.
     </div>
   </div>
 </section>
@@ -198,10 +171,8 @@
 <section id="how">
   <div class="wrap">
     <div class="sec-head">
-      <div>
-        <div class="eyebrow">Nasıl çalışır</div>
-        <h2>Pazartesi brief, perşembe reklam</h2>
-      </div>
+      <div class="eyebrow">Nasıl çalışır</div>
+      <h2>Pazartesi brief, perşembe reklam</h2>
     </div>
     <div class="steps">
       <div class="step"><b>Brief</b>Altı soru: ürün, amaç, platform, süre, yazı, teslim tarihi. Artı beş ürün fotoğrafı ve logonuz. On dakika.</div>
@@ -212,26 +183,59 @@
   </div>
 </section>
 
-<section id="contact">
+<section id="faq">
   <div class="wrap">
-    <div class="contact">
-      <div>
-        <div class="eyebrow">İletişim</div>
-        <h2>Bir ürün fotoğrafı gönderin, reklam fikriyle dönelim</h2>
-        <p>E-posta ya da Instagram'dan yazın. Ne sattığınızı söyleyin, bir gün içinde konsept ve fiyatla dönelim.</p>
-      </div>
-      <div class="links">
-        <a class="btn primary" href="mailto:hello@diffusioncut.com">hello@diffusioncut.com</a>
-        <a class="btn" href="https://www.instagram.com/diffusioncut" target="_blank" rel="noopener">Instagram</a>
-      </div>
+    <div class="sec-head">
+      <div class="eyebrow">SSS</div>
+      <h2>Sormadan önce</h2>
+    </div>
+    <div class="faq">
+      <details><summary>Gerçekten yapay zeka ile mi yapılıyor?</summary><p>Evet, açıkça. Görüntü ve video modelleri ürününüzü ve sahneleri fotoğraflarınızdan yeniden kurar; yönetmenlik, kurgu ve ses tasarımı bizden. Bu fiyat ve üç gün bu yüzden.</p></details>
+      <details><summary>Ürün benim ürünüme benzeyecek mi?</summary><p>Evet. Kendi fotoğraflarınızla çalışıyoruz, farklı açılardan beş ve üzeri fotoğraf; şekil, etiket, renk ve logo eşleştirilir. Bir detay yanlışsa revizyon turları bunun için.</p></details>
+      <details><summary>Sizden ne gerekiyor?</summary><p>Ürün fotoğrafları, PNG veya SVG logo ve altı kısa sorunun cevabı. Kargo yok, çekim günü yok, istemezseniz toplantı da yok.</p></details>
+      <details><summary>Reklamın sahibi kim?</summary><p>Siz. Web siteniz, sosyal kanallarınız ve ücretli reklamlarınız için tam kullanım hakkı, dünya çapında, süresiz. Müzik ve ses ticari kullanım için lisanslı.</p></details>
+      <details><summary>İnsan, seslendirme, daha uzun film olur mu?</summary><p>Olur. Çekimden çekime aynı kalan karakterler uzmanlığımız, marka reklamlarında seslendirme var, uzun filmler ayrıca fiyatlandırılır.</p></details>
+      <details><summary>Ödeme nasıl?</summary><p>Yarısı siparişte, yarısı teslimde; kart veya havale. Aylık paketler ay başında faturalanır, istediğiniz zaman durdurulur.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="closing" id="contact">
+  <div class="wrap">
+    <div class="eyebrow">İletişim</div>
+    <h2>Bir ürün fotoğrafı gönderin. Yarın reklam fikriyle dönelim.</h2>
+    <p>Ne sattığınızı söyleyin. Bir gün içinde konsept ve fiyatla dönüyoruz.</p>
+    <div class="links">
+      <a class="btn primary" href="mailto:hello@diffusioncut.com">hello@diffusioncut.com</a>
+      <a class="btn" href="https://www.instagram.com/diffusioncut" target="_blank" rel="noopener">Instagram'dan yazın</a>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <div>© 2026 Diffusion Cut · <a href="https://barissabuncular.github.io" target="_blank" rel="noopener">Barış Sabuncular</a></div>
-    <div><a href="index.html">English</a> · <a href="https://www.instagram.com/diffusioncut" target="_blank" rel="noopener">Instagram</a></div>
+    <div>
+      <a class="brand" href="#top"><img class="mark" src="brand/mark_transparent.svg" alt="" width="24" height="24">DIFFUSION CUT</a>
+      <div class="fine">Yapay zeka video stüdyosu. Online markalar için reklam, anlatmaya değer hikâyeler için film. <a href="https://barissabuncular.github.io" target="_blank" rel="noopener">Barış Sabuncular</a>.</div>
+    </div>
+    <div>
+      <b>Stüdyo</b>
+      <ul>
+        <li><a href="#work">İşler</a></li>
+        <li><a href="#prices">Fiyatlar</a></li>
+        <li><a href="#faq">SSS</a></li>
+        <li><a href="index.html">English</a></li>
+      </ul>
+    </div>
+    <div>
+      <b>Takip</b>
+      <ul>
+        <li><a href="https://www.instagram.com/diffusioncut" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.tiktok.com/@diffusioncut" target="_blank" rel="noopener">TikTok</a></li>
+        <li><a href="https://www.youtube.com/@diffusioncut" target="_blank" rel="noopener">YouTube</a></li>
+        <li><a href="https://x.com/diffusioncut" target="_blank" rel="noopener">X</a></li>
+      </ul>
+    </div>
   </div>
 </footer>
 
